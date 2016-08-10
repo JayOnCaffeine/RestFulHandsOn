@@ -22,9 +22,9 @@ REST uses HTTP methods to share resources over internet. Following HTTP methods 
 
 This project creates todo with following REST service:
 
-HTTP Method | URI           | Operation                | Operation Type
-------------|---------------|--------------------------|---------------
-GET         | /ToDoService/todos   | Get list of All ToDo         | Read
+HTTP Method | URI                  | Operation                | Operation Type
+------------|----------------------|--------------------------|---------------
+GET         | /ToDoService/todos   | Get list of All ToDo     | Read
 GET         | /ToDoService/todos/1 | Get first ToDo           | Read
 PUT         | /ToDoService/todos/2 | Insert second ToDo       | Idempotent
 POST        | /ToDoService/todos/2 | Update second ToDo       | N/A
