@@ -58,6 +58,13 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webXml>WebContent\WEB-INF\web.xml</webXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
@@ -89,8 +96,8 @@
 	</build>
 
 	<properties>
-			<jersey.version>2.23.2</jersey.version>
-			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-			<jetty.version>9.0.6.v20130930</jetty.version>
+		<jersey.version>2.23.2</jersey.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jetty.version>9.0.6.v20130930</jetty.version>
 	</properties>
 </project>
