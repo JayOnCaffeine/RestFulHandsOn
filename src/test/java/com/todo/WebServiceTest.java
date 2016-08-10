@@ -9,10 +9,12 @@ import javax.ws.rs.core.Form;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
+import com.todo.ToDo;
+
 public class WebServiceTest {
 
 	private Client client;
-	private String REST_SERVICE_URL = "http://localhost:8080/RestFulHandsOn/rest/ToDoService/todos";
+	private String REST_SERVICE_URL = "http://localhost:8080/RestFulHandsOn/ToDoService/todos";
 	private static final String SUCCESS_RESULT = "<result>success</result>";
 	private static final String PASS = "pass";
 	private static final String FAIL = "fail";
