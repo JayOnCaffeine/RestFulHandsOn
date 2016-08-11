@@ -23,51 +23,57 @@ public class ToDoService {
 	final ToDoDao toDoDao = new ToDoDao();
 	private static final String SUCCESS_RESULT = "<result>success</result>";
 	private static final String FAILURE_RESULT = "<result>failure</result>";
-	
+
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getMain() {
+		return "ToDo service up!!";
+	}
+
 	@GET
 	@Path("/todos")
 	@Produces(MediaType.APPLICATION_XML)
 	public List<ToDo> getToDos() {
 		return toDoDao.getAllToDo();
 	}
-	
+
 	@GET
 	@Path("/todos/{todoid}")
 	@Produces(MediaType.APPLICATION_XML)
 	public ToDo getToDo(@PathParam("todoid") int id) {
 		return toDoDao.getToDo(id);
 	}
-	
+
 	@PUT
 	@Path("/todos")
 	@Produces(MediaType.APPLICATION_XML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public String createToDo(@FormParam("id") int id, @FormParam("tododtls") String toDoDtls, 
+	public String createToDo(@FormParam("id") int id, @FormParam("tododtls") String toDoDtls,
 			@FormParam("statusdone") boolean statusDone,
 			@Context HttpServletResponse response) throws IOException {
 		final ToDo todo = new ToDo(id, toDoDtls, statusDone);
-		
+
 		if(toDoDao.addToDo(todo) > 0) {
 			return SUCCESS_RESULT;
 		}
 		return FAILURE_RESULT;
 	}
-	
+
 	@POST
 	@Path("/todos")
 	@Produces(MediaType.APPLICATION_XML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public String updateToDo(@FormParam("id") int id, @FormParam("tododtls") String toDoDtls, 
-			@FormParam("statusdone") boolean statusDone, 
+	public String updateToDo(@FormParam("id") int id, @FormParam("tododtls") String toDoDtls,
+			@FormParam("statusdone") boolean statusDone,
 			@Context HttpServletResponse response) throws IOException {
 		final ToDo todo = new ToDo(id, toDoDtls, statusDone);
-		
+
 		if(toDoDao.updateToDo(todo) > 0) {
 			return SUCCESS_RESULT;
 		}
 		return FAILURE_RESULT;
 	}
-	
+
 	@DELETE
 	@Path("/todos/{todoid}")
 	@Produces(MediaType.APPLICATION_XML)
@@ -77,12 +83,12 @@ public class ToDoService {
 		}
 		return FAILURE_RESULT;
 	}
-	
+
 	@OPTIONS
 	@Path("/todos")
 	@Produces(MediaType.APPLICATION_XML)
 	public String getSupportedOperations(){
 	      return "<operations>GET, PUT, POST, DELETE</operations>";
 	}
-	
+
 }
