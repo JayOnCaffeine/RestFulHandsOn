@@ -12,6 +12,6 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>Jersey RESTful Application</servlet-name>
-  	<url-pattern>/*</url-pattern>
+  	<url-pattern>/ToDoService/*</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -17,7 +17,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
-@Path("/ToDoService")
+@Path("/")
 public class ToDoService {
 
 	final ToDoDao toDoDao = new ToDoDao();
