@@ -16,7 +16,7 @@ public class ToDoDao {
 	public List<ToDo> getAllToDo() {
 		final List<ToDo> toDoList = new ArrayList<ToDo>();
 		try {
-			final File toDoFile = new File(proj_home + "/RestFulHandsOn/ToDo.dat");
+			final File toDoFile = new File(proj_home + "/ToDo.dat");
 			if(!toDoFile.exists()) {
 				final ToDo toDo = new ToDo(1, "Complete REST", false);
 				toDoList.add(toDo);
