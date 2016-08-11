@@ -55,3 +55,4 @@ hs_err_pid*
 # Dev related files
 ################################################
 ToDo.dat
+/target/
