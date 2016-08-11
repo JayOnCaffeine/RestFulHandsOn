@@ -17,7 +17,7 @@ public class Main {
 		webAppContext.setContextPath("/");
 		webAppContext.setParentLoaderPriority(true);
 
-		final String webappDirLocation = "src/main/webapp/";
+		final String webappDirLocation = "WebContent/";
 		webAppContext.setDescriptor(webappDirLocation + "/WEB-INF/web.xml");
 		webAppContext.setResourceBase(webappDirLocation);
 
