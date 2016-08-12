@@ -84,7 +84,7 @@ public class ToDoDao {
 	
 	private void saveToDoList(final List<ToDo> toDoList) {
 		try {
-			final File file = new File(proj_home + "/RestFulHandsOn/ToDo.dat");
+			final File file = new File(proj_home + "/ToDo.dat");
 			final FileOutputStream fos = new FileOutputStream(file);
 			final ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(toDoList);
