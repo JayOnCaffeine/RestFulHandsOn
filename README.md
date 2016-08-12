@@ -27,7 +27,7 @@ HTTP Method | URI                  | Operation                | Operation Type
 ------------|----------------------|--------------------------|---------------
 GET         | /ToDoService/todos   | Get list of All ToDo     | Read
 GET         | /ToDoService/todos/1 | Get first ToDo           | Read
-PUT         | /ToDoService/todos/2 | Insert second ToDo       | Idempotent
+PUT         | /ToDoService/todos/  | Insert second ToDo       | Idempotent
 POST        | /ToDoService/todos/2 | Update second ToDo       | N/A
 DELETE      | /ToDoService/todos/2 | Delete second ToDo       | Idempotent
 OPTIONS     | /ToDoService/todos   | List supported operation | Read
