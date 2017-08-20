@@ -45,21 +45,6 @@ public class ToDoService {
 	}
 
 	@PUT
-	@Path("/todos")
-	@Produces(MediaType.APPLICATION_XML)
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public String createToDo(@FormParam("tododtls") String toDoDtls,
-			@FormParam("statusdone") boolean statusDone,
-			@Context HttpServletResponse response) throws IOException {
-		final ToDo todo = new ToDo(0, toDoDtls, statusDone);
-
-		if(toDoDao.addToDo(todo) > 0) {
-			return SUCCESS_RESULT;
-		}
-		return FAILURE_RESULT;
-	}
-
-	@POST
 	@Path("/todos/{todoid}")
 	@Produces(MediaType.APPLICATION_XML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -69,6 +54,21 @@ public class ToDoService {
 		final ToDo todo = new ToDo(id, toDoDtls, statusDone);
 
 		if(toDoDao.updateToDo(todo) > 0) {
+			return SUCCESS_RESULT;
+		}
+		return FAILURE_RESULT;
+	}
+
+	@POST
+	@Path("/todos")
+	@Produces(MediaType.APPLICATION_XML)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public String createToDo(@FormParam("tododtls") String toDoDtls,
+			@FormParam("statusdone") boolean statusDone,
+			@Context HttpServletResponse response) throws IOException {
+		final ToDo todo = new ToDo(0, toDoDtls, statusDone);
+
+		if(toDoDao.addToDo(todo) > 0) {
 			return SUCCESS_RESULT;
 		}
 		return FAILURE_RESULT;

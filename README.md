@@ -16,8 +16,8 @@ Web services is nothing but providing standards to access resources on the inter
 REST uses HTTP methods to share resources over internet. Following HTTP methods are commonly used in REST based architecture,
 
 *   GET - Read access to resource.
-*   PUT - Create new resource.
-*   POST - Update existing or create new resource.
+*   PUT - Update resource. (Idempotent)
+*   POST - Create new resource.
 *   DELETE - Remove resource.
 *   OPTIONS - Get supported operations on a resource.
 
@@ -27,7 +27,7 @@ HTTP Method | URI                  | Operation                | Operation Type
 ------------|----------------------|--------------------------|---------------
 GET         | /ToDoService/todos   | Get list of All ToDo     | Read
 GET         | /ToDoService/todos/1 | Get first ToDo           | Read
-PUT         | /ToDoService/todos/  | Insert second ToDo       | Idempotent
-POST        | /ToDoService/todos/2 | Update second ToDo       | N/A
+PUT         | /ToDoService/todos/1 | Update first ToDo        | Idempotent
+POST        | /ToDoService/todos/  | Create second ToDo       | N/A
 DELETE      | /ToDoService/todos/2 | Delete second ToDo       | Idempotent
 OPTIONS     | /ToDoService/todos   | List supported operation | Read
